@@ -2,7 +2,7 @@ Summary:	Multiplayer game
 Summary(pl):	Gra dla wielu graczy
 Name:		jumpnbump
 Version:	1.50
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Games
 Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.gz
