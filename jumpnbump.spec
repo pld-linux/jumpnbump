@@ -2,7 +2,7 @@ Summary:	Multiplayer game
 Summary(pl):	Gra dla wielu graczy
 Name:		jumpnbump
 Version:	1.35
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Games
 Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.bz2
@@ -17,8 +17,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 You're a cute little bunny and you have to avoid the other bunnies
 from stomping on you and at the same time try to stomp as many
-opponents as possible. Jump & bump is multiplayer only with up to four
+opponents as possible. Jump & Bump is multiplayer only with up to four
 players simultaneously. Gather the local crew and have a blast.
+
+%description -l pl
+W tej grze jeste¶ ma³ym królikiem, który musi unikn±æ rozdeptania
+przez inne króliki, a jednocze¶cie próbowaæ rozdeptaæ jak najwiêcej
+przeciwników. Jump & Bump to gra wy³±cznie dla wielu graczy -
+maksymalnie czterech naraz. Zgromad¼cie w³asn± dru¿ynê i walczcie.
 
 %package levelpack
 Summary:	Additional levels for Jump & Bump
