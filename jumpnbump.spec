@@ -50,7 +50,7 @@ mv -f Makefile- Makefile
 
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG} -DUSE_SDL \
+	CFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG} -DUSE_SDL -DUSE_NET \
 		-I%{_builddir}/%{name}-%{version} \
 		`sdl-config --cflags` \
 		-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp" \
