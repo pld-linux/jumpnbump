@@ -27,7 +27,8 @@ mv -f Makefile- Makefile
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -DUSE_SDL -DNDEBUG -I. `sdl-config --cflags` -Dstricmp=strcasecmp -Dstrnicmp=strncasecmp" \
+	CFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG} -DUSE_SDL -I. `sdl-config --cflags` \
+		-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp" \
 	LFLAGS="%{rpmldflags}"
 
 %install
