@@ -7,3 +7,4 @@ Icon=jumpnbump.png
 Exec=/usr/games/jnbmenu.tcl
 Terminal=false
 Type=Application
+# vi: encoding=utf-8
