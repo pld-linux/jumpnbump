@@ -2,7 +2,7 @@ Summary:	Multiplayer game
 Summary(pl):	Gra dla wielu graczy
 Name:		jumpnbump
 Version:	1.50
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Games
 Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.gz
@@ -35,7 +35,7 @@ maksymalnie czterech naraz. Zgromad¼ w³asn± dru¿ynê i baw siê dobrze.
 Summary:	Additional levels for Jump & Bump
 Summary(pl):	Dodatkowe poziomy dla Jump & Bump
 Group:		Applications/Games
-Requires:	%{name}
+Requires:	%{name} = %{version}-%{release}
 
 %description levelpack
 249 additional levels for Jump & Bump.
@@ -62,7 +62,7 @@ mv -f Makefile- Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_mandir}/man6,%{_applnkdir}/Games/Arcade,%{_pixmapsdir},%{_bindir}}
+install -d $RPM_BUILD_ROOT{%{_mandir}/man6,%{_desktopdir},%{_pixmapsdir},%{_bindir}}
 
 %{__make} install \
 	PREFIX="$RPM_BUILD_ROOT%{_prefix}"
@@ -72,7 +72,7 @@ for i in $RPM_BUILD_ROOT%{_prefix}/games/* ; do mv $i $RPM_BUILD_ROOT%{_bindir} 
 
 install %{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Games/Arcade
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 cd $RPM_BUILD_ROOT%{_datadir}/%{name}
@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/jumpbump.dat
 %{_mandir}/man6/*
 %{_pixmapsdir}/*
-%{_applnkdir}/Games/Arcade/*
+%{_desktopdir}/*.desktop
 
 %files levelpack
 %defattr(644,root,root,755)
