@@ -21,10 +21,10 @@ opponents as possible. Jump & Bump is multiplayer only with up to four
 players simultaneously. Gather the local crew and have a blast.
 
 %description -l pl
-W tej grze jeste¶ ma³ym królikiem, który musi unikn±æ rozdeptania
-przez inne króliki, a jednocze¶cie próbowaæ rozdeptaæ jak najwiêcej
+W tej grze gracz jest ma³ym królikiem, który musi unikn±æ rozdeptania
+przez inne króliki, a jednocze¶nie próbowaæ rozdeptaæ jak najwiêcej
 przeciwników. Jump & Bump to gra wy³±cznie dla wielu graczy -
-maksymalnie czterech naraz. Zgromad¼cie w³asn± dru¿ynê i walczcie.
+maksymalnie czterech naraz. Zgromad¼ w³asn± dru¿ynê i baw siê dobrze.
 
 %package levelpack
 Summary:	Additional levels for Jump & Bump
