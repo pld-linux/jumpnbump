@@ -1,12 +1,12 @@
 Summary:	Multiplayer game
 Summary(pl):	Gra dla wielu graczy
 Name:		jumpnbump
-Version:	1.35
-Release:	2
+Version:	1.41
+Release:	1
 License:	GPL
 Group:		Applications/Games
 Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.bz2
-# Source0-md5:	d30aff394ad50f87ab1b94ed4c25e447
+# Source0-md5:	be67e60900c977d4fe9ef2b6f6518fb2
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 # from http://jumpnbump.spaceteddy.net/
@@ -14,6 +14,7 @@ Source3:	%{name}-levels-20020811.tar.bz2
 # Source3-md5:	08ebc0f6761ce2dcb560de98808d525d
 URL:		http://www.jumpbump.mine.nu/
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	SDL_net-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,24 +44,27 @@ Requires:	%{name}
 %prep
 %setup -q
 
-cat Makefile | sed "s/-o root -g games//g" > Makefile-
+%build
+cat Makefile | sed "s/-o root -g [^ ]\+//g" > Makefile-
 mv -f Makefile- Makefile
 
-cat jnbmenu.tcl | sed "s@/usr/share/games/jumpnbump@/usr/share/jumpnbump@g" > a-
-mv -f a- jnbmenu.tcl
-
-%build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG} -DUSE_SDL -I. `sdl-config --cflags` \
+	CFLAGS="%{rpmcflags} %{!?debug:-DNDEBUG} -DUSE_SDL \
+		-I%{_builddir}/%{name}-%{version} \
+		`sdl-config --cflags` \
 		-Dstricmp=strcasecmp -Dstrnicmp=strncasecmp" \
-	LFLAGS="%{rpmldflags}"
+	LFLAGS="%{rpmldflags}" \
+	PREFIX="%{_prefix}"
+
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_mandir}/man6,%{_applnkdir}/Games/Arcade,%{_pixmapsdir}}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	PREFIX="$RPM_BUILD_ROOT%{_prefix}"
+
 rm $RPM_BUILD_ROOT%{_prefix}/games/%{name}.{fbcon,svgalib}
 
 install %{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
