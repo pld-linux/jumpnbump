@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jump & Bump
+Comment=Multiplayer game
+Comment[pl]=Gra dla wielu graczy
+Icon=jumpnbump.png
+Exec=/usr/games/jnbmenu.tcl
+Terminal=0
+Type=Application
