@@ -1,12 +1,12 @@
 Summary:	Multiplayer game
 Summary(pl):	Gra dla wielu graczy
 Name:		jumpnbump
-Version:	1.41
+Version:	1.50
 Release:	1
 License:	GPL
 Group:		Applications/Games
-Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.bz2
-# Source0-md5:	be67e60900c977d4fe9ef2b6f6518fb2
+Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.gz
+# Source0-md5:	c7c79136e07948975504abcbe62ba130
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 # from http://jumpnbump.spaceteddy.net/
@@ -16,6 +16,8 @@ URL:		http://www.jumpbump.mine.nu/
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautocompressdoc	*.pcx
 
 %description
 You're a cute little bunny and you have to avoid the other bunnies
@@ -60,12 +62,13 @@ mv -f Makefile- Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_mandir}/man6,%{_applnkdir}/Games/Arcade,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_mandir}/man6,%{_applnkdir}/Games/Arcade,%{_pixmapsdir},%{_bindir}}
 
 %{__make} install \
 	PREFIX="$RPM_BUILD_ROOT%{_prefix}"
 
 rm $RPM_BUILD_ROOT%{_prefix}/games/%{name}.{fbcon,svgalib}
+for i in $RPM_BUILD_ROOT%{_prefix}/games/* ; do mv $i $RPM_BUILD_ROOT%{_bindir} ; done
 
 install %{name}.6 $RPM_BUILD_ROOT%{_mandir}/man6
 
@@ -81,7 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog LINKS README TODO readme.txt source.txt
-%attr(755,root,root) %{_prefix}/games/*
+%doc levelmaking
+%attr(755,root,root) %{_bindir}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/jumpbump.dat
 %{_mandir}/man6/*
