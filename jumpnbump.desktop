@@ -4,5 +4,5 @@ Comment=Multiplayer game
 Comment[pl]=Gra dla wielu graczy
 Icon=jumpnbump.png
 Exec=/usr/games/jnbmenu.tcl
-Terminal=0
+Terminal=false
 Type=Application
