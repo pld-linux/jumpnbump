@@ -14,8 +14,8 @@ Source0:	http://www.jumpbump.mine.nu/port/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 # from http://jumpnbump.spaceteddy.net/
-Source3:        %{name}-levels-20020811.tar.bz2
-# Source3-md5:  08ebc0f6761ce2dcb560de98808d525d
+Source3:	%{name}-levels-20020811.tar.bz2
+# Source3-md5:	08ebc0f6761ce2dcb560de98808d525d
 URL:		http://www.jumpbump.mine.nu/
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
