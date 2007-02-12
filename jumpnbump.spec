@@ -3,7 +3,7 @@
 # There is archive with 201 levels with never date than
 # an archive in our repo (250 files).
 Summary:	Multiplayer game
-Summary(pl):	Gra dla wielu graczy
+Summary(pl.UTF-8):   Gra dla wielu graczy
 Name:		jumpnbump
 Version:	1.55
 Release:	1
@@ -29,23 +29,23 @@ from stomping on you and at the same time try to stomp as many
 opponents as possible. Jump & Bump is multiplayer only with up to four
 players simultaneously. Gather the local crew and have a blast.
 
-%description -l pl
-W tej grze gracz jest ma³ym królikiem, który musi unikn±æ rozdeptania
-przez inne króliki, a jednocze¶nie próbowaæ rozdeptaæ jak najwiêcej
-przeciwników. Jump & Bump to gra wy³±cznie dla wielu graczy -
-maksymalnie czterech naraz. Zgromad¼ w³asn± dru¿ynê i baw siê dobrze.
+%description -l pl.UTF-8
+W tej grze gracz jest maÅ‚ym krÃ³likiem, ktÃ³ry musi uniknÄ…Ä‡ rozdeptania
+przez inne krÃ³liki, a jednoczeÅ›nie prÃ³bowaÄ‡ rozdeptaÄ‡ jak najwiÄ™cej
+przeciwnikÃ³w. Jump & Bump to gra wyÅ‚Ä…cznie dla wielu graczy -
+maksymalnie czterech naraz. ZgromadÅº wÅ‚asnÄ… druÅ¼ynÄ™ i baw siÄ™ dobrze.
 
 %package levelpack
 Summary:	Additional levels for Jump & Bump
-Summary(pl):	Dodatkowe poziomy dla Jump & Bump
+Summary(pl.UTF-8):   Dodatkowe poziomy dla Jump & Bump
 Group:		Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description levelpack
 249 additional levels for Jump & Bump.
 
-%description levelpack -l pl
-249 dodatkowych poziomów dla Jump & Bump.
+%description levelpack -l pl.UTF-8
+249 dodatkowych poziomÃ³w dla Jump & Bump.
 
 %prep
 %setup -q -n %{name}-1.50
