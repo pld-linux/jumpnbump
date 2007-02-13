@@ -3,7 +3,7 @@
 # There is archive with 201 levels with never date than
 # an archive in our repo (250 files).
 Summary:	Multiplayer game
-Summary(pl.UTF-8):   Gra dla wielu graczy
+Summary(pl.UTF-8):	Gra dla wielu graczy
 Name:		jumpnbump
 Version:	1.55
 Release:	1
@@ -37,7 +37,7 @@ maksymalnie czterech naraz. Zgromadź własną drużynę i baw się dobrze.
 
 %package levelpack
 Summary:	Additional levels for Jump & Bump
-Summary(pl.UTF-8):   Dodatkowe poziomy dla Jump & Bump
+Summary(pl.UTF-8):	Dodatkowe poziomy dla Jump & Bump
 Group:		Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
