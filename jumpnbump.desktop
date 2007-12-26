@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Jump & Bump
 Comment=Multiplayer game
 Comment[pl]=Gra dla wielu graczy
-Icon=jumpnbump.png
+Icon=jumpnbump
 Exec=/usr/bin/jnbmenu.tcl
 Terminal=false
 Type=Application
